@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Hello Shopify</title>
+    <meta name="description" content="Hello World Python / Flask Example using Shopify Embedded SDK">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.shopify.com/s/assets/external/app.js"></script>
+    <script type="text/javascript">
+        ShopifyApp.init({
+          apiKey: '{{ config["SHOPIFY_API_KEY"] }}',
+          shopOrigin: 'https://{{ session["shopify_url"] }}',
+          debug: true
+        });
+    </script>
+</head>
+<body>
+<script type="text/javascript">
+    ShopifyApp.ready(function(){
+        ShopifyApp.Bar.initialize({
+            title: 'Hello Shopify - Index'
+        });
+    });
+</script>
+Hello World!
+</body>
