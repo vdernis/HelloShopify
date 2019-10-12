@@ -19,4 +19,6 @@ logs/*
 
 env
 
+venv
+
 .DS_Store

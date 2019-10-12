@@ -1,4 +1,4 @@
-from flask.ext.script import Manager
+from flask_script import Manager
 
 from helloshopify import create_app
 from helloshopify.extensions import db

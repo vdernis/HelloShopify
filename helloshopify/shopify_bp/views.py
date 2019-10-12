@@ -33,13 +33,13 @@ def install():
         api_key=current_app.config['SHOPIFY_API_KEY'], 
         secret=current_app.config['SHOPIFY_SHARED_SECRET'])
 
-    session = shopify.Session(shop_url)
+    session = shopify.Session(shop_url, version='2019-04')
 
     scope=[
         "write_products", "read_products", "read_script_tags", 
         "write_script_tags"]
     redirect_uri = url_for("shopify_bp.finalize", _external=True)
-    print redirect_uri
+    print(redirect_uri)
     permission_url = session.create_permission_url(
         scope, redirect_uri)
 
@@ -56,7 +56,7 @@ def finalize():
     shopify.Session.setup(
         api_key=current_app.config['SHOPIFY_API_KEY'], 
         secret=current_app.config['SHOPIFY_SHARED_SECRET'])
-    shopify_session = shopify.Session(shop_url)
+    shopify_session = shopify.Session(shop_url, version='2019-04')
 
     token = shopify_session.request_token(request.args)
 

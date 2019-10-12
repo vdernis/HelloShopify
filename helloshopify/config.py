@@ -1,5 +1,6 @@
 import os
 
+
 class DefaultConfig(object):
 
     PROJECT = "Hello Shopify"
@@ -17,5 +18,5 @@ class DefaultConfig(object):
     SQLALCHEMY_TRACK_MODIFICATIONS = True
     SQLALCHEMY_ECHO = True
 
-    SHOPIFY_API_KEY = 'YOUR API KEY'
-    SHOPIFY_SHARED_SECRET = 'YOUR SHARED SECRET'
+    SHOPIFY_API_KEY = os.environ['SHOPIFY_API_KEY']
+    SHOPIFY_SHARED_SECRET = os.environ['SHOPIFY_SHARED_SECRET']
