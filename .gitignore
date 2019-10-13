@@ -20,5 +20,6 @@ logs/*
 env
 
 venv
+.idea
 
 .DS_Store
